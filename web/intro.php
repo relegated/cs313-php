@@ -16,7 +16,7 @@
 
         <span class="phpText" id="phpText">
             <?php
-                echo date("d\r\nM\r\nY");
+                echo date("d M Y");
             ?>
         </span>
     </body>

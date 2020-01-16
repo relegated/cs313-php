@@ -1,0 +1,73 @@
+body {
+    background-color: white;
+    font-size: 24px;
+}
+
+h1 {
+    color: darkred;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 56px;
+    margin-left: 40px;
+}
+
+h2 {
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 36px;
+    margin-left: 60px;
+}
+
+a {
+    color: black;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+}
+
+a.navbar {
+	color: darkred;
+	font-family:georgia;
+	font-size: 24px;
+	background-color:gray;
+	padding: 8px;
+}
+
+ul.navbar {
+	list-style-type: none;
+	font-family: georgia;
+	font-size: 24px;
+	color: darkred;
+	background-color: gray;
+}
+
+li.navbar {
+	display:inline;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px solid black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    display: none;
+    width: 120px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    display: block;
+}
+
+.phpText {
+    visibility: hidden;
+    display: none;
+}

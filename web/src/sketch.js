@@ -13,6 +13,8 @@ function setup() {
     background(200);
     stroke(0);
     noFill();
+    textSize(10);
+    textAlign(CENTER);
     mine = new Mine(windowHeight - 40, 0, mineImage);
 }
 

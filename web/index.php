@@ -9,8 +9,8 @@
 <h2>Homepage</h2>
 
 <ul class="navbar">
-    <li class="navbar"><a class="navbar" href="intro.html">Introduction</a></li>
-    <li class="navbar"><a class="navbar" href="assignments.html">Assignments</a></li>
+    <li class="navbar"><a class="navbar" href="intro.php">Introduction</a></li>
+    <li class="navbar"><a class="navbar" href="assignments.php">Assignments</a></li>
 </ul>
 
 </body>

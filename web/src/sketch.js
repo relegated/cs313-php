@@ -41,7 +41,7 @@ function draw() {
         }
         else {
             image(graveImage, mine.position.x, mine.position.y);
-            text(timeOfDeath, mine.position.x + 30, mine.position.y + 28, 30, 60);
+            text(timeOfDeath, mine.position.x + 30, mine.position.y + 20, 30, 60);
         }
     }
 

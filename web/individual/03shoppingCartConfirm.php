@@ -34,9 +34,10 @@ $grandTotal = $bagOfGold->total + $twoHeadedCobra->total + $burrito->total + $st
             echo "<li>0x Ark of the Covenant</li>";
         ?>
         </ul>
-        <br><p>will be delivered to </p><br><br>
+        <p>will be delivered to </p>
         <?php
             echo $address;
+            echo "<br><br>";
             setlocale(LC_MONETARY, 'en_US.UTF-8');
             echo "<p>The grand total was ".money_format("%.2n", floatval($grandTotal))." </p>" ?>
     </body>

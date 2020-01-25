@@ -25,7 +25,7 @@ button {
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: darkred;
     border: 1px;
-    border-color: white;
+    border-color: black;
     float: right;
 }
 
@@ -39,7 +39,7 @@ h2 {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-li:nth-child(even) {
+li {
     padding: 3px;
-
+    
 }

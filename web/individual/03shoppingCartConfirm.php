@@ -21,12 +21,11 @@ $paperTowel = unserialize($_SESSION['paperTowels']);
 
         <p>The following items</p>
         <?php
-            echo "<p>".$bagOfGold->qty." ".$bagOfGold->name."</p>";
-            echo "<p>".$twoHeadedCobra->qty." ".$twoHeadedCobra->name."</p>";
-            echo "<p>".$burrito->qty." ".$burrito->name."</p>";
-            echo "<p>".$statue->qty." ".$statue->name."</p>";
-            echo "<p>".$paperTowel->qty." ".$paperTowel->name."</p>";
-            print_r($_SESSION);
+            echo "<p>".$bagOfGold->qty."x ".$bagOfGold->name."</p>";
+            echo "<p>".$twoHeadedCobra->qty."x ".$twoHeadedCobra->name."</p>";
+            echo "<p>".$burrito->qty."x ".$burrito->name."</p>";
+            echo "<p>".$statue->qty."x ".$statue->name."</p>";
+            echo "<p>".$paperTowel->qty."x ".$paperTowel->name."</p>";
         ?>
         <p>will be delivered to </p>
         <?php

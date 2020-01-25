@@ -9,9 +9,8 @@ $twoHeadedCobra = unserialize($_SESSION['twoHeadedCobra']);
 $burrito = unserialize($_SESSION['burritos']);
 $statue = unserialize($_SESSION['statue']);
 $paperTowel = unserialize($_SESSION['paperTowels']);
-$grandTotal = function () {
-    return $bagOfGold->total + $twoHeadedCobra->total + $burrito->total + $statue->total + $paperTowel->total;
-}
+$grandTotal = $bagOfGold->total + $twoHeadedCobra->total + $burrito->total + $statue->total + $paperTowel->total;
+
 
 ?>
 

@@ -33,7 +33,6 @@ $grandTotal = function () {
         <p>will be delivered to </p>
         <?php
             echo $address;
-        ?>
-        <p>The grand total was <?php echo money_format($grandTotal)?> </p>
+            echo "<p>The grand total was ". money_format($grandTotal) ." </p>" ?>
     </body>
 </html>

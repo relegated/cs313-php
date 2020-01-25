@@ -6,10 +6,10 @@ include '03cartItemClass.php';
 
 //initialize a cart item for each product - unless we have canceled
 $bagOfGold = new CartItem("Bag of Gold", 0, 2000);
-$twoHeadedCobra = = new CartItem("Two Headed Cobra", 0 , 700);
-$burrito =  = new CartItem("300 lb Bag of Bean Burritos", 0, 200);
-$statue =  = new CartItem("Life-size Statue of Andre the Giant made of Swiss Cheese", 0, 3812);
-$paperTowel =  = new CartItem("Roll of Paper Towels", 0, 2);
+$twoHeadedCobra = new CartItem("Two Headed Cobra", 0 , 700);
+$burrito = new CartItem("300 lb Bag of Bean Burritos", 0, 200);
+$statue = new CartItem("Life-size Statue of Andre the Giant made of Swiss Cheese", 0, 3812);
+$paperTowel = new CartItem("Roll of Paper Towels", 0, 2);
 $ark = new CartItem("Ark of the Covenant", 0, 2000000000);
 
 if ($_SESSION['lastPage'] != "03shoppingCartCheckout.php") {

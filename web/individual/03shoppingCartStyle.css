@@ -24,8 +24,7 @@ button {
     font-size: large;
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: darkred;
-    border: 1px;
-    border-color: black;
+    border: 1px solid black;
     float: right;
 }
 

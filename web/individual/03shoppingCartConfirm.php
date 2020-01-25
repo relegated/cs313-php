@@ -5,9 +5,9 @@ include '03cartItemClass.php';
 $address = strip_tags($_POST['address']);
 $bagOfGold = $_SESSION['bagOfGold'];
 $twoHeadedCobra = $_SESSION['twoHeadedCobra'];
-$burrito = $_SESSION['burrito'];
+$burrito = $_SESSION['burritos'];
 $statue = $_SESSION['statue'];
-$paperTowel = $_SESSION['paperTowel'];
+$paperTowel = $_SESSION['paperTowels'];
 
 ?>
 

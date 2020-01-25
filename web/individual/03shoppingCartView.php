@@ -10,6 +10,7 @@ $twoHeadedCobra = = new CartItem("Two Headed Cobra", 0 , 700);
 $burrito =  = new CartItem("300 lb Bag of Bean Burritos", 0, 200);
 $statue =  = new CartItem("Life-size Statue of Andre the Giant made of Swiss Cheese", 0, 3812);
 $paperTowel =  = new CartItem("Roll of Paper Towels", 0, 2);
+$ark = new CartItem("Ark of the Covenant", 0, 2000000000);
 
 if ($_SESSION['lastPage'] != "03shoppingCartCheckout.php") {
     initializeWithPostData();
@@ -30,7 +31,7 @@ $_SESSION['twoHeadedCobra']  = serialize($twoHeadedCobra);
 $_SESSION['burritos'] = serialize($burrito);
 $_SESSION['statue'] = serialize($statue);
 $_SESSION['paperTowels'] = serialize($paperTowel);
-$_SESSION['ark'] = serialize(new CartItem("Ark of the Covenant", 0, 2000000000));
+$_SESSION['ark'] = serialize($ark);
 
 ?>
 

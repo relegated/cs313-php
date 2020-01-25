@@ -1,15 +1,14 @@
 <?php
 session_start();
-echo session_id();
 
 include '03cartItemClass.php';
 
 $address = strip_tags($_POST['address']);
-$bagOfGold = $_SESSION['bagOfGold'];
-$twoHeadedCobra = $_SESSION['twoHeadedCobra'];
-$burrito = $_SESSION['burritos'];
-$statue = $_SESSION['statue'];
-$paperTowel = $_SESSION['paperTowels'];
+$bagOfGold = unserialize($_SESSION['bagOfGold']);
+$twoHeadedCobra = unserialize($_SESSION['twoHeadedCobra']);
+$burrito = unserialize($_SESSION['burritos']);
+$statue = unserialize($_SESSION['statue']);
+$paperTowel = unserialize($_SESSION['paperTowels']);
 
 ?>
 
@@ -27,6 +26,7 @@ $paperTowel = $_SESSION['paperTowels'];
             echo "<p>".$burrito->qty." ".$burrito->name."</p>";
             echo "<p>".$statue->qty." ".$statue->name."</p>";
             echo "<p>".$paperTowel->qty." ".$paperTowel->name."</p>";
+            print_r($_SESSION);
         ?>
         <p>will be delivered to </p>
         <?php

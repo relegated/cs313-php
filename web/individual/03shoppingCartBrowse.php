@@ -1,6 +1,5 @@
 <?php
 session_start();
-echo session_id();
 
 $_SESSION["lastPage"] = "03shoppingCartBrowse.php";
 

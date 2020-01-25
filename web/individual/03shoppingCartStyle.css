@@ -1,5 +1,7 @@
 table {
     width: 95%;
+    border: 1px;
+    border-color: darkgrey;
 }
 
 th {
@@ -16,3 +18,17 @@ tr:nth-child(even) {
     background-color: darkgrey;
 }
 
+button {
+    padding: 15px;
+    color: white;
+    font-size: large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: darkred;
+    border: 1px;
+    border-color: white;
+}
+
+h1 {
+    padding: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

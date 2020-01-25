@@ -24,14 +24,17 @@ $grandTotal = $bagOfGold->total + $twoHeadedCobra->total + $burrito->total + $st
         <h2>Order Confirmation - Thank you for your purchase!</h2>
 
         <p>The following items</p>
+        <ul>
         <?php
-            echo "<p>    ".$bagOfGold->qty."x ".$bagOfGold->name."</p>";
-            echo "<p>    ".$twoHeadedCobra->qty."x ".$twoHeadedCobra->name."</p>";
-            echo "<p>    ".$burrito->qty."x ".$burrito->name."</p>";
-            echo "<p>    ".$statue->qty."x ".$statue->name."</p>";
-            echo "<p>    ".$paperTowel->qty."x ".$paperTowel->name."</p>";
+            echo "<li>".$bagOfGold->qty."x ".$bagOfGold->name."</li>";
+            echo "<li>".$twoHeadedCobra->qty."x ".$twoHeadedCobra->name."</li>";
+            echo "<li>".$burrito->qty."x ".$burrito->name."</li>";
+            echo "<li>".$statue->qty."x ".$statue->name."</li>";
+            echo "<li>".$paperTowel->qty."x ".$paperTowel->name."</li>";
+            echo "<li>0x Ark of the Covenant</li>";
         ?>
-        <br><p>will be delivered to </p><br>
+        </ul>
+        <br><p>will be delivered to </p><br><br>
         <?php
             echo $address;
             setlocale(LC_MONETARY, 'en_US.UTF-8');

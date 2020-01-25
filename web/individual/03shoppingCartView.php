@@ -5,35 +5,32 @@ session_start();
 include '03cartItemClass.php';
 
 //initialize a cart item for each product - unless we have canceled
+$bagOfGold = new CartItem("Bag of Gold", 0, 2000);
+$twoHeadedCobra = = new CartItem("Two Headed Cobra", 0 , 700);
+$burrito =  = new CartItem("300 lb Bag of Bean Burritos", 0, 200);
+$statue =  = new CartItem("Life-size Statue of Andre the Giant made of Swiss Cheese", 0, 3812);
+$paperTowel =  = new CartItem("Roll of Paper Towels", 0, 2);
+
 if ($_SESSION['lastPage'] != "03shoppingCartCheckout.php") {
     initializeWithPostData();
-} else {
-    initializeWithZeroQtys();
-}
+} 
 
 function initializeWithPostData(){
-    $_SESSION['bagOfGold'] = serialize(new CartItem("Bag of Gold", strip_tags($_POST['bagOfGoldQty']), 2000));
-    $_SESSION['twoHeadedCobra'] = serialize(new CartItem("Two Headed Cobra", strip_tags($_POST['twoHeadedCobraQty']), 700));
-    $_SESSION['burritos'] = serialize(new CartItem("300 lb Bag of Bean Burritos", strip_tags($_POST['burritosQty']), 200));
-    $_SESSION['statue'] = serialize(new CartItem("Life-size Statue of Andre the Giant made of Swiss Cheese", strip_tags($_POST['statueQty']), 3812));
-    $_SESSION['paperTowels'] = serialize(new CartItem("Roll of Paper Towels", strip_tags($_POST["paperTowelsQty"]), 2));
-    $_SESSION['ark'] = serialize(new CartItem("Ark of the Covenant", 0, 2000000000);
+    global $bagOfGold, $twoHeadedCobra, $burrito, $statue, $paperTowel;
+    $bagOfGold = new CartItem("Bag of Gold", strip_tags($_POST['bagOfGoldQty']), 2000);
+    $twoHeadedCobra = new CartItem("Two Headed Cobra", strip_tags($_POST['twoHeadedCobraQty']), 700);
+    $burrito = new CartItem("300 lb Bag of Bean Burritos", strip_tags($_POST['burritosQty']), 200);
+    $statue = new CartItem("Life-size Statue of Andre the Giant made of Swiss Cheese", strip_tags($_POST['statueQty']), 3812);
+    $paperTowel = new CartItem("Roll of Paper Towels", strip_tags($_POST["paperTowelsQty"]), 2);
+    
 }
 
-function initializeWithZeroQtys(){
-    $_SESSION['bagOfGold'] = serialize(new CartItem("Bag of Gold", 0, 2000));
-    $_SESSION['twoHeadedCobra'] = serialize(new CartItem("Two Headed Cobra", 0 , 700));
-    $_SESSION['burritos'] = serialize(new CartItem("300 lb Bag of Bean Burritos", 0, 200));
-    $_SESSION['statue'] = serialize(new CartItem("Life-size Statue of Andre the Giant made of Swiss Cheese", 0, 3812));
-    $_SESSION['paperTowels'] = serialize(new CartItem("Roll of Paper Towels", 0, 2));
-    $_SESSION['ark'] = serialize(new CartItem("Ark of the Covenant", 0, 2000000000));
-}
-
-$bagOfGold = unserialize($_SESSION['bagOfGold']);
-$twoHeadedCobra = unserialize($_SESSION['twoHeadedCobra']);
-$burrito = unserialize($_SESSION['burritos']);
-$statue = unserialize($_SESSION['statue']);
-$paperTowel = unserialize($_SESSION['paperTowels']);
+$_SESSION['bagOfGold'] = serialize($bagOfGold);
+$_SESSION['twoHeadedCobra']  = serialize($twoHeadedCobra);
+$_SESSION['burritos'] = serialize($burrito);
+$_SESSION['statue'] = serialize($statue);
+$_SESSION['paperTowels'] = serialize($paperTowel);
+$_SESSION['ark'] = serialize(new CartItem("Ark of the Covenant", 0, 2000000000));
 
 ?>
 

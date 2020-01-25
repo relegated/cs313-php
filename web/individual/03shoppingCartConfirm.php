@@ -32,6 +32,7 @@ $grandTotal = $bagOfGold->total + $twoHeadedCobra->total + $burrito->total + $st
         <p>will be delivered to </p>
         <?php
             echo $address;
-            echo "<p>The grand total was ".money_format("%i", floatval($grandTotal))." </p>" ?>
+            setlocale(LC_MONETARY, 'en_US.UTF-8');
+            echo "<p>The grand total was ".money_format("%.2n", floatval($grandTotal))." </p>" ?>
     </body>
 </html>

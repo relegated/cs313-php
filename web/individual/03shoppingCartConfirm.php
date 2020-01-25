@@ -10,7 +10,7 @@ $burrito = unserialize($_SESSION['burritos']);
 $statue = unserialize($_SESSION['statue']);
 $paperTowel = unserialize($_SESSION['paperTowels']);
 $grandTotal = function () {
-    echo $bagOfGold->total;// + $twoHeadedCobra->total + $burrito->total + $statue->total + $paperTowel->total;
+    echo $bagOfGold->total + $twoHeadedCobra->total + $burrito->total + $statue->total + $paperTowel->total;
 }
 
 ?>
@@ -34,6 +34,6 @@ $grandTotal = function () {
         <?php
             echo $address;
         ?>
-        <p>The grand total was <?php money_format($grandTotal)?> </p>
+        <p>The grand total was <?php echo money_format($grandTotal)?> </p>
     </body>
 </html>

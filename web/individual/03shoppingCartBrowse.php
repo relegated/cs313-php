@@ -14,6 +14,12 @@ $_SESSION["lastPage"] = "03shoppingCartBrowse.php";
 
 <form id="inventoryForm" action="03shoppingCartView.php" method="post">
 <table>
+<tr>
+    <th>Item</th>
+    <th>Image</th>
+    <th>Quantity</th>
+    <th>Price Per Unit</th>
+</tr>
 <tr><td class="identifier">Bag of Gold</td>
     <td><img src="../images/bagOfGold.png" alt="Bag of Gold"></td>
     <td><label class="qty" for="bagOfGold">qty<label></td>

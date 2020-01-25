@@ -11,7 +11,7 @@ $_SESSION["lastPage"] = "03shoppingCartBrowse.php";
 <link rel="stylesheet" type="text/css" href="03shoppingCartStyle.css">
 </head>
 <body>
-<h1>Browse</h1>
+<h1>Browse Products</h1>
 
 <form id="inventoryForm" action="03shoppingCartView.php" method="post">
 <table>

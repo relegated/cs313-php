@@ -26,6 +26,7 @@ button {
     background-color: darkred;
     border: 1px;
     border-color: white;
+    float: right;
 }
 
 h1 {

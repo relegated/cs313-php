@@ -17,9 +17,11 @@ $grandTotal = $bagOfGold->total + $twoHeadedCobra->total + $burrito->total + $st
 <html>
     <head>
         <title>Order Confirmation</title>
+        <link rel="stylesheet" type="text/css" href="03shoppingCartStyle.css">
     </head>
     <body>
-        <h1>Order Confirmation</h1>
+    <h1>Critical Purchasing Inc.</h1>
+        <h2>Order Confirmation - Thank you for your purchase!</h2>
 
         <p>The following items</p>
         <?php

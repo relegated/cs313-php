@@ -10,9 +10,11 @@ $_SESSION["lastPage"] = "03shoppingCartCheckout.php";
 <html>
     <head>
         <title>Checkout</title>
+        <link rel="stylesheet" type="text/css" href="03shoppingCartStyle.css">
     </head>
     <body>
-        <h1>Checkout</h1>
+    <h1>Critical Purchasing Inc.</h1>
+        <h2>Checkout</h2>
 
         <form action="03shoppingCartConfirm.php" method="post">
             <p>Enter Address:</p>

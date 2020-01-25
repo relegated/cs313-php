@@ -42,3 +42,8 @@ li {
     padding: 3px;
     
 }
+
+.total {
+    font-style: italic;
+    font-weight: bold;
+}

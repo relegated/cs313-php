@@ -8,6 +8,7 @@ $_SESSION["lastPage"] = "03shoppingCartBrowse.php";
 <html>
 <head>
 <title>Shopping</title>
+<link rel="stylesheet" type="text/css" href="03shoppingCartStyle.css">
 </head>
 <body>
 <h1>Browse</h1>

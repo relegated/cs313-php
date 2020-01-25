@@ -7,6 +7,7 @@ $bagOfGold = $_SESSION['bagOfGold'];
 $twoHeadedCobra = $_SESSION['twoHeadedCobra'];
 $burrito = $_SESSION['burrito'];
 $statue = $_SESSION['statue'];
+$paperTowel = $_SESSION['paperTowel'];
 
 ?>
 
@@ -27,6 +28,8 @@ $statue = $_SESSION['statue'];
             echo " ".$burrito->name."<br>";
             echo $statue->qty;
             echo " ".$statue->name."<br>";
+            echo $paperTowel->qty;
+            echo " ".$paperTowel->name."<br>";
         ?>
         <p>will be deliverd to </p>
         <?php

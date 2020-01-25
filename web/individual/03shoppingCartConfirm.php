@@ -22,16 +22,11 @@ $paperTowel = $_SESSION['paperTowels'];
 
         <p>The following items</p>
         <?php
-            echo $bagOfGold->qty;
-            echo " ".$bagOfGold->name."<br>";
-            echo $twoHeadedCobra->qty;
-            echo " ".$twoHeadedCobra->name."<br>";
-            echo $burrito->qty;
-            echo " ".$burrito->name."<br>";
-            echo $statue->qty;
-            echo " ".$statue->name."<br>";
-            echo $paperTowel->qty;
-            echo " ".$paperTowel->name."<br>";
+            echo "<p>".$bagOfGold->qty." ".$bagOfGold->name."</p>";
+            echo "<p>".$twoHeadedCobra->qty." ".$twoHeadedCobra->name."</p>";
+            echo "<p>".$burrito->qty." ".$burrito->name."</p>";
+            echo "<p>".$statue->qty." ".$statue->name."</p>";
+            echo "<p>".$paperTowel->qty." ".$paperTowel->name."</p>";
         ?>
         <p>will be delivered to </p>
         <?php

@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include '03cartItemClass.php';
 
@@ -31,7 +32,7 @@ $paperTowel = $_SESSION['paperTowels'];
             echo $paperTowel->qty;
             echo " ".$paperTowel->name."<br>";
         ?>
-        <p>will be deliverd to </p>
+        <p>will be delivered to </p>
         <?php
             echo $address;
         ?>

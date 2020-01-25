@@ -1,4 +1,5 @@
 <?php
+session_start();
 //Cart Item class
 include '03cartItemClass.php';
 

@@ -19,8 +19,8 @@ $_SESSION["lastPage"] = "03shoppingCartCheckout.php";
             <p><textarea name="address" id="address" cols="30" rows="10" placeholder="Enter your address here"></textarea><p>
             <button type="submit">Confirm</button>
         </form>
-        <form action="03shoppingCartView.php" method="post">
-            <button type="submit">Go Back</button>
+        <form action="03shoppingCartBrowse.php" method="post">
+            <button type="submit">Clear Cart</button>
         </form>
     </body>
 </html>

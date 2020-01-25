@@ -13,40 +13,46 @@ $_SESSION["lastPage"] = "03shoppingCartBrowse.php";
 <h1>Browse</h1>
 
 <form id="inventoryForm" action="03shoppingCartView.php" method="post">
-<ul>
-<li><span class="identifier">Bag of Gold</span>
-    <label class="qty" for="bagOfGold">qty<label>
-    <input type="number" id="bagOfGold" name="bagOfGoldQty" value="0" min="0" max="5"> 
-    <span class="price">$2,000</span>
-</li>
-<li>
-    <span class="identifier">Two-Headed Cobra</span>
-    <label class="qty" for="twoHeadedCobra">qty<label>
-    <input type="number" id="twoHeadedCobra" name="twoHeadedCobraQty" value="0" min="0" max="5"> 
-    <span class="price">$700</span>
-</li>
-<li><span class="identifier">300 lb Bag of Bean Burritos</span>
-    <label class="qty" for="burritos">qty<label>
-    <input type="number" id="burritos" name="burritosQty" value="0" min="0" max="5">
-    <span class="price">$200</span>
-</li>
-<li><span class="identifier">Life-size Statue of Andre the Giant made of Swiss Cheese</span>
-    <label class="qty" for="statue">qty<label>
-    <input type="number" id="statue" name="statueQty" value="0" min="0" max="5"> 
-    <span class="price">$3,812</span>
-</li>
-<li><span class="identifier">Roll of Paper Towels</span>
-    <label class="qty" for="paperTowels">qty<label>
-    <input type="number" id="paperTowels" name="paperTowelsQty" value="0" min="0" max="5"> 
-    <span class="price">$2</span>
-</li>
-<li class="disabled"><span class="identifier">Ark of the Covenant (Out of Stock)</span>
-    <label class="qty" for="ark">qty<label>
-    <input type="number" id="ark" min="0" max="5" value="0" disabled> 
-    <span class="price">$2,000,000,000</span>
-</li>
+<table>
+<tr><td class="identifier">Bag of Gold</td>
+    <td><img src="../images/bagOfGold.png" alt="Bag of Gold"></td>
+    <td><label class="qty" for="bagOfGold">qty<label></td>
+    <td><input type="number" id="bagOfGold" name="bagOfGoldQty" value="0" min="0" max="5"></td>
+    <td class="price">$2,000</td>
+</tr>
+<tr>
+    <td class="identifier">Two-Headed Cobra</td>
+    <td><img src="../images/twoHeadedCobra.png" alt="Two-headed Cobra"></td>
+    <td><label class="qty" for="twoHeadedCobra">qty<label></td>
+    <td><input type="number" id="twoHeadedCobra" name="twoHeadedCobraQty" value="0" min="0" max="5"> </td>
+    <td class="price">$700</td>
+</tr>
+<tr><td class="identifier">300 lb Bag of Bean Burritos</td>
+    <td><img src="../images/burritos.png" alt="Burritos"></td>
+    <td><label class="qty" for="burritos">qty<label></td>
+    <td><input type="number" id="burritos" name="burritosQty" value="0" min="0" max="5"></td>
+    <td class="price">$200</td>
+</tr>
+<tr><td class="identifier">Life-size Statue of Andre the Giant made of Swiss Cheese</td>
+    <td><img src="../images/statue.png" alt="Statue"></td>
+    <td><label class="qty" for="statue">qty<label></td>
+    <td><input type="number" id="statue" name="statueQty" value="0" min="0" max="5"> </td>
+    <td class="price">$3,812</td>
+</tr>
+<tr><td class="identifier">Roll of Paper Towels</td>
+    <td><img src="../images/paperTowels.png" alt="Paper Towels"></td>
+    <td><label class="qty" for="paperTowels">qty<label></td>
+    <td><input type="number" id="paperTowels" name="paperTowelsQty" value="0" min="0" max="5"> </td>
+    <td class="price">$2</td>
+</tr>
+<tr class="disabled"><td class="identifier">Ark of the Covenant (Out of Stock)</td>
+    <td><img src="../images/ark.png" alt="Ark of the Covenant"></td>
+    <td><label class="qty" for="ark">qty<label></td>
+    <td><input type="number" id="ark" min="0" max="5" value="0" disabled> </td>
+    <td class="price">$2,000,000,000</td>
+</tr>
     
-</ul>
+</table>
 <button type="submit">Add to Cart</button>
 </form>
 

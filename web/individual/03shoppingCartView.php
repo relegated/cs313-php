@@ -34,6 +34,7 @@ $_SESSION['paperTowels'] = serialize($paperTowel);
 $_SESSION['ark'] = serialize($ark);
 
 setlocale(LC_MONETARY, 'en_US.UTF-8');
+$grandTotal = $bagOfGold->total + $twoHeadedCobra->total + $burrito->total + $statue->total + $paperTowel->total;
 
 ?>
 
@@ -93,6 +94,8 @@ setlocale(LC_MONETARY, 'en_US.UTF-8');
 </li>
     
 </ul>
+<br>
+<?php echo '<p class="total">Grand Total: '.money_format("%.2n", floatval($grandTotal)).' </p>' ?>
 
 <button type="submit">Check Out</button>
 </form>

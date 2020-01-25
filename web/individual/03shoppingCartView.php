@@ -1,5 +1,7 @@
 <?php
 session_start();
+echo session_id();
+
 //Cart Item class
 include '03cartItemClass.php';
 

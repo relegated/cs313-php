@@ -25,13 +25,13 @@ $grandTotal = $bagOfGold->total + $twoHeadedCobra->total + $burrito->total + $st
 
         <p>The following items</p>
         <?php
-            echo "<p>".$bagOfGold->qty."x ".$bagOfGold->name."</p>";
-            echo "<p>".$twoHeadedCobra->qty."x ".$twoHeadedCobra->name."</p>";
-            echo "<p>".$burrito->qty."x ".$burrito->name."</p>";
-            echo "<p>".$statue->qty."x ".$statue->name."</p>";
-            echo "<p>".$paperTowel->qty."x ".$paperTowel->name."</p>";
+            echo "<p>    ".$bagOfGold->qty."x ".$bagOfGold->name."</p>";
+            echo "<p>    ".$twoHeadedCobra->qty."x ".$twoHeadedCobra->name."</p>";
+            echo "<p>    ".$burrito->qty."x ".$burrito->name."</p>";
+            echo "<p>    ".$statue->qty."x ".$statue->name."</p>";
+            echo "<p>    ".$paperTowel->qty."x ".$paperTowel->name."</p>";
         ?>
-        <p>will be delivered to </p>
+        <br><p>will be delivered to </p><br>
         <?php
             echo $address;
             setlocale(LC_MONETARY, 'en_US.UTF-8');

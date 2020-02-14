@@ -58,7 +58,7 @@ if ($signInValidated) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title><?php echo 'Top 5 Videos For ' . $displayName?></title>
+        <title><?php echo 'Top 5 Videos For ' . $displayName; ?></title>
         <style>
             tr, th, td {
                 padding: 10px;
@@ -69,7 +69,7 @@ if ($signInValidated) {
         </style>
     </head>
     <body>
-    <h1><?php echo 'Top 5 Videos For ' . $displayName?></h1>
+    <h1><?php echo 'Top 5 Videos For ' . $displayName; ?></h1>
     
     <?php 
     if ($rows) {
@@ -86,7 +86,7 @@ if ($signInValidated) {
         ?>
         <tr>
         <?php
-        echo $ranking . ':' ?> <a href="<?php echo $link; ?>"><?php echo $link; ?></a><br>
+        echo $ranking . ':'; ?> <a href="<?php echo $link; ?>"><?php echo $link; ?></a><br>
         </tr>
     <?php 
         }
@@ -106,7 +106,7 @@ if ($signInValidated) {
     <?php
 }
 else {
-    header('Location: videoslogin.html?invalid=true')
+    header('Location: videoslogin.html?invalid=true');
 }
 
 ?>

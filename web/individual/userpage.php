@@ -88,9 +88,10 @@ if ($signInValidated) {
         $ranking = $search_result['ranking'];
         $link = $search_result['link'];
         ?>
-        <tr>
+        <tr> <td>
         <?php
-        echo $ranking . ':'; ?> <a href="<?php echo $link; ?>"><?php echo $link; ?></a><br>
+        echo $ranking . ':'; ?></td>
+         <td><a href="<?php echo $link; ?>"><?php echo $link; ?></a></td>
         </tr>
     <?php 
         }

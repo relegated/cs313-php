@@ -124,7 +124,7 @@ if ($signInValidated) {
                 let textInput = createInput(elementId, fullLink, linkText);
 
                 tableDataElement.innerHTML = "";
-                tableDataElement.appeandChild(textInput);
+                tableDataElement.appendChild(textInput);
             }
 
             function getLinkHTML(linkText) {

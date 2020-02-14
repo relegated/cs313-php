@@ -25,7 +25,7 @@ $signInValidated = $signInValidation->fetchColumn() > 0;
 if ($signInValidated) {
     //logic to display results
     try {
-        $displayNameQuery = $db->prepare("SELECT concat(first_name, ' ', last_name) AS fullname
+        $displayNameQuery = $db->prepare("SELECT concat(first_name, ' ', last_name) AS fullname, user_id
         FROM user_account 
         WHERE account_email =:id");
         $displayNameQuery->bindValue(':id', $id, PDO::PARAM_STR);
@@ -33,8 +33,10 @@ if ($signInValidated) {
     
         $displayNameArray = $displayNameQuery->fetchAll(PDO::FETCH_ASSOC);
         $displayName = "";
+        $accountId = 0;
         foreach ($displayNameArray as $name) {
             $displayName = $name['fullname'];
+            $accountId = $name['user_id'];
         }
     
         
@@ -74,7 +76,79 @@ if ($signInValidated) {
             h1, label, button, input, form {
             padding: 10px 10px 10px 10px;
         }
+        div {
+            padding: 10px 10px 10px 10px;
+            color: red;
+            font-weight: bold;
+            font-size: large;
+        }
         </style>
+        <script>         
+            function updateVideo(elementid, linkText, originalText) {
+                let tableDataElement = document.getElementById(elementid);
+
+                //cancel if empty;
+                if (linkText.length == 0) {
+                    tableDataElement.innerHTML = originalText;
+                    return;
+                }
+
+                //setup ajax callback
+                let xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        tableDataElement.innerHTML = getLinkHTML(linkText);
+                        document.getElementById("error").innerHTML = "";
+                    }
+                    else if (this.readyState == 4 && this.status == 409) {
+                        tableDataElement.innerHTML = originalText;
+                        document.getElementById("error").innerHTML = "This Video has already been added";
+                    }
+                    else if (this.readyState == 4) {
+                        tableDataElement.innerHTML = originalText;
+                        document.getElementById("error").innerHTML = "An error occurred adding or updating the video link";
+                    }
+                };
+
+                xmlhttp.open("POST", "updatevideo.php", true);
+                xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xmlhttp.send("userid=" + <?php echo $accountId; ?> +
+                            "videonumber=" + elementid +
+                            "videolink=" + linkText);
+            }
+
+            function generateEditorControl(tableDataElement) {
+                let fullLink = tableDataElement.innerHTML;
+                let linkText = tableDataElement.firstChild.innerHTML;
+                let elementId = tableDataElement.id;
+                let textInput = createInput(elementid, fullLink, linkText);
+
+                tableDataElement.innerHTML = "";
+                tableDataElement.appeandChild(textInput);
+            }
+
+            function getLinkHTML(linkText) {
+                return linkHTML = "<a href=\"" + 
+                    linkText + "\">" + 
+                    linkText + "</a>";
+            }
+
+            function createInput(elementid, fullLink, originalValue) {
+                let returnControl = document.createElement("input");
+                let typeAttribute = document.createAttribute("type");
+                typeAttribute.value = "text";
+                returnControl.setAttribute(typeAttribute);
+                let nameAttribute = document.createAttribute("name");
+                nameAttribute = fullLink;
+                let titleAttribute = document.createAttribute("title");
+                titleAttribute = elementid;
+                let focusEvent = document.createAttribute("onfocusout");
+                focusEvent.value = "updateVideo(this.title, this.value, this.name)";
+                returnControl.value = originalValue;
+
+                return returnControl;
+            }
+        </script>
     </head>
     <body>
     <h1><?php echo 'Top 5 Videos For ' . $displayName; ?></h1>
@@ -86,6 +160,7 @@ if ($signInValidated) {
             <tr>
                 <th>Rank</th>
                 <th>Link</th>
+                <th>Add/Edit</th>
             </tr>
         <?php
         foreach( $rows as $search_result ) {
@@ -95,7 +170,8 @@ if ($signInValidated) {
         <tr> <td>
         <?php
         echo $ranking . ':'; ?></td>
-         <td><a href="<?php echo $link; ?>"><?php echo $link; ?></a></td>
+         <td id="<?php echo $ranking; ?>" ><a href="<?php echo $link; ?>"><?php echo $link; ?></a></td>
+         <td><button type="button" onclick="generateEditorControl(document.getElementById(&quot;<?php echo $ranking; ?>&quot;">Add/Edit</button></td>
         </tr>
     <?php 
         }
@@ -109,6 +185,9 @@ if ($signInValidated) {
         <?php 
     }
     ?>
+
+    <div id="error"></div>
+
     </body>
     </html>
 

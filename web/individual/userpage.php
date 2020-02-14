@@ -84,8 +84,8 @@ if ($signInValidated) {
         }
         </style>
         <script>         
-            function updateVideo(elementid, linkText, originalText) {
-                let tableDataElement = document.getElementById(elementid);
+            function updateVideo(elementId, linkText, originalText) {
+                let tableDataElement = document.getElementById(elementId);
 
                 //cancel if empty;
                 if (linkText.length == 0) {
@@ -113,7 +113,7 @@ if ($signInValidated) {
                 xmlhttp.open("POST", "updatevideo.php", true);
                 xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                 xmlhttp.send("userid=" + <?php echo $accountId; ?> +
-                            "videonumber=" + elementid +
+                            "videonumber=" + elementId +
                             "videolink=" + linkText);
             }
 
@@ -121,7 +121,7 @@ if ($signInValidated) {
                 let fullLink = tableDataElement.innerHTML;
                 let linkText = tableDataElement.firstChild.innerHTML;
                 let elementId = tableDataElement.id;
-                let textInput = createInput(elementid, fullLink, linkText);
+                let textInput = createInput(elementId, fullLink, linkText);
 
                 tableDataElement.innerHTML = "";
                 tableDataElement.appeandChild(textInput);
@@ -133,7 +133,7 @@ if ($signInValidated) {
                     linkText + "</a>";
             }
 
-            function createInput(elementid, fullLink, originalValue) {
+            function createInput(elementId, fullLink, originalValue) {
                 let returnControl = document.createElement("input");
                 let typeAttribute = document.createAttribute("type");
                 typeAttribute.value = "text";
@@ -141,7 +141,7 @@ if ($signInValidated) {
                 let nameAttribute = document.createAttribute("name");
                 nameAttribute = fullLink;
                 let titleAttribute = document.createAttribute("title");
-                titleAttribute = elementid;
+                titleAttribute = elementId;
                 let focusEvent = document.createAttribute("onfocusout");
                 focusEvent.value = "updateVideo(this.title, this.value, this.name)";
                 returnControl.value = originalValue;

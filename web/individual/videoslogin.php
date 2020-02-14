@@ -19,7 +19,7 @@
 
 <body>
     <h1><?php if ($invalidLogin == true) { echo 'Invalid '; }?>Login</h1>
-    <form action="userpage.php">
+    <form action="userpage.php" method="POST">
         <label for="username">Username: </label>
         <input type="text" id="username" name="username"><br>
         <label for="password">Password:  </label>

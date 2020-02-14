@@ -17,7 +17,7 @@ $signInValidated = $signInValidation->fetchColumn() > 0;
 
 if ($signInValidated) {
     //logic to display results
-    $displayNameQuery = $db->prepare("SELECT concat(first_name, ' ', last_name 
+    $displayNameQuery = $db->prepare("SELECT concat(first_name, ' ', last_name) 
     FROM user_account 
     WHERE account_email =:id");
     $displayNameQuery->bindValue(':id', $id, PDO::PARAM_STR);

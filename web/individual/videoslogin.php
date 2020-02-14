@@ -4,7 +4,7 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>5 Videos Login</title>

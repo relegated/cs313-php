@@ -32,7 +32,7 @@ if ($doesVideoExistQuery->fetchColumn() > 0) {
 try {
     $doesRankExistQuery = $db->prepare("SELECT COUNT(*)
     FROM video_links
-    WHERE user_id =:id AND ranking =:videoNumber");
+    WHERE user_id =:id AND ranking =:videonumber");
     $doesRankExistQuery->bindValue(':id', $id, PDO::PARAM_INT);
     $doesRankExistQuery->bindValue(':videonumber', $videoNumber, PDO::PARAM_INT);
     
@@ -48,7 +48,7 @@ if ($doesRankExistQuery->fetchColumn() > 0) {
     try {
         $updateLinkStatement = $db->prepare("UPDATE video_links
     SET link =:videolink
-    WHERE user_id =:id AND ranking =:videoNumber");
+    WHERE user_id =:id AND ranking =:videonumber");
     $updateLinkStatement->bindValue(':id', $id, PDO::PARAM_INT);
     $updateLinkStatement->bindValue(':videonumber', $videoNumber, PDO::PARAM_INT);
     $updateLinkStatement->bindValue(':videolink', $videoLink, PDO::PARAM_STR);

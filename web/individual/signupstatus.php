@@ -42,8 +42,7 @@ $userNameAvailable = $userNameAvailability->fetchColumn() == 0;
 if ($userNameAvailable) {
 
     try {
-        $addUserStatment = $db->prepare("INSERT (first_name, last_name, account_email, pass_hash)
-        INTO user_account
+        $addUserStatment = $db->prepare("INSERT INTO user_account (first_name, last_name, account_email, pass_hash)
         VALUES (:firstname , :lastname , :username , :pass)");
         $addUserStatment->bindValue(':firstname', $firstname, PDO::PARAM_STR);
         $addUserStatment->bindValue(':lastname', $lastname, PDO::PARAM_STR);

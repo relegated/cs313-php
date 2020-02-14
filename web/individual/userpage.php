@@ -43,7 +43,7 @@ if ($signInValidated) {
     FROM video_links AS vl
     LEFT JOIN user_account AS ua 
     ON vl.user_id = ua.user_id
-    WHERE ua.user_id =:id
+    WHERE ua.account_email =:id
     ORDER BY vl.ranking;");
     $videos->bindValue(':id', $id, PDO::PARAM_STR);
 

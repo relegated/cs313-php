@@ -2,9 +2,7 @@
     $invalidLogin = $_GET['invalid'];
     if (is_null($invalidLogin)) {
         $invalidLogin = false;
-    }
-    echo $invalidLogin;
-    
+    }    
 ?>
 
 <!-- <!DOCTYPE html>
@@ -20,7 +18,7 @@
 </head>
 
 <body>
-    <h1><?php #if ($invalidLogin) { echo 'Invalid ' }?>Login</h1>
+    <h1><?php if ($invalidLogin) { echo 'Invalid ' }?>Login</h1>
     <form action="userpage.php">
         <label for="username">Username: </label>
         <input type="text" id="username" name="username"><br>

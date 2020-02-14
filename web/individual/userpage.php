@@ -190,27 +190,27 @@ if ($signInValidated) {
             <tr>
                 <td>1</td>
                 <td id="1">No Video Yet</td>
-                <td><button type="button" onclick="generateEditorControl(document.getElementById(&quot;1&quot;">Add/Edit</button></td>            
+                <td><button type="button" onclick="generateEditorControl(document.getElementById(&quot;1&quot;)">Add/Edit</button></td>            
             </tr>
             <tr>           
                 <td>2</td>
                 <td id="2">No Video Yet</td>
-                <td><button type="button" onclick="generateEditorControl(document.getElementById(&quot;2&quot;">Add/Edit</button></td>            
+                <td><button type="button" onclick="generateEditorControl(document.getElementById(&quot;2&quot;)">Add/Edit</button></td>            
             </tr>
             <tr>
                 <td>3</td>
                 <td id="3">No Video Yet</td>
-                <td><button type="button" onclick="generateEditorControl(document.getElementById(&quot;3&quot;">Add/Edit</button></td>
+                <td><button type="button" onclick="generateEditorControl(document.getElementById(&quot;3&quot;)">Add/Edit</button></td>
             </tr>
             <tr>
                 <td>4</td>
                 <td id="4">No Video Yet</td>
-                <td><button type="button" onclick="generateEditorControl(document.getElementById(&quot;4&quot;">Add/Edit</button></td>
+                <td><button type="button" onclick="generateEditorControl(document.getElementById(&quot;4&quot;)">Add/Edit</button></td>
             </tr>
             <tr>
                 <td>5</td>
                 <td id="5">No Video Yet</td>
-                <td><button type="button" onclick="generateEditorControl(document.getElementById(&quot;5&quot;">Add/Edit</button></td>
+                <td><button type="button" onclick="generateEditorControl(document.getElementById(&quot;5&quot;)">Add/Edit</button></td>
             </tr>
         </table>
         <?php 

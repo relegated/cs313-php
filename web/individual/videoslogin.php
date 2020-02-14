@@ -7,6 +7,9 @@
     if ($invalidLogin) {
         echo 'Hello';
     }
+    else {
+        echo 'You are good';
+    }
 ?>
 
 <!-- <!DOCTYPE html>

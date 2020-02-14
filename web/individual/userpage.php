@@ -113,8 +113,8 @@ if ($signInValidated) {
                 xmlhttp.open("POST", "updatevideo.php", true);
                 xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                 xmlhttp.send("userid=" + <?php echo $accountId; ?> +
-                            "videonumber=" + elementId +
-                            "videolink=" + linkText);
+                            "&videonumber=" + elementId +
+                            "&videolink=" + linkText);
             }
 
             function generateEditorControl(tableDataElement) {

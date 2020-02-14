@@ -136,14 +136,17 @@ if ($signInValidated) {
             function createInput(elementId, fullLink, originalValue) {
                 let returnControl = document.createElement("input");
                 let typeAttribute = document.createAttribute("type");
-                typeAttribute.value = "text";
-                returnControl.setAttribute(typeAttribute);
-                let nameAttribute = document.createAttribute("name");
-                nameAttribute = fullLink;
-                let titleAttribute = document.createAttribute("title");
-                titleAttribute = elementId;
-                let focusEvent = document.createAttribute("onfocusout");
-                focusEvent.value = "updateVideo(this.title, this.value, this.name)";
+                //typeAttribute.value = "text";
+                returnControl.setAttribute("type", "text");
+                returnControl.setAttribute("name", fullLink);
+                returnControl.setAttribute("title", elementId);
+                returnControl.setAttribute("onfocusout", "updateVideo(this.title, this.value, this.name)");
+                // let nameAttribute = document.createAttribute("name");
+                // nameAttribute = fullLink;
+                // let titleAttribute = document.createAttribute("title");
+                // titleAttribute = elementId;
+                // let focusEvent = document.createAttribute("onfocusout");
+                // focusEvent.value = "updateVideo(this.title, this.value, this.name)";
                 returnControl.value = originalValue;
 
                 return returnControl;

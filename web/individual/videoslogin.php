@@ -1,7 +1,10 @@
 <?php
-    #$invalidLogin = $_GET['invalid'];
-    #echo $invalidLogin;
-    echo 'Hello';
+    $invalidLogin = $_GET['invalid'];
+    if (is_null($invalidLogin)) {
+        $invalidLogin = false;
+    }
+    echo $invalidLogin;
+    
 ?>
 
 <!-- <!DOCTYPE html>

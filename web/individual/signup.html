@@ -6,17 +6,31 @@
                 padding: 10px 10px 10px 10px;
             }
         </style>
+        <script>
+            function UpdateButtonEnabled(){
+                let firstNameText = document.getElementById("firstname").value;
+                let lastNameText = document.getElementById("lastname").value;
+                let userNameText = document.getElementById("username").value;
+                let passText = document.getElementById("password").value;
+
+                document.getElementById("signupbutton").disabled = 
+                    firstNameText.length == 0 ||
+                    lastNameText.length == 0 ||
+                    userNameText.length == 0 ||
+                    passText.length == 0;
+            }
+        </script>
     </head>
     <h1>Signup</h1>
     <form action="signupstatus.php" method="POST">
         <label for="firstname">First Name: </label>
-        <input type="text" id="firstname" name="firstname"><br>
+        <input type="text" id="firstname" name="firstname" oninput="UpdateButtonEnabled()"><br>
         <label for="lastname">Last Name: </label>
-        <input type="text" id="lastname" name="lastname"><br>
+        <input type="text" id="lastname" name="lastname" oninput="UpdateButtonEnabled()"><br>
         <label for="username">Username: </label>
-        <input type="text" id="username" name="username"><br>
+        <input type="text" id="username" name="username" oninput="UpdateButtonEnabled()"><br>
         <label for="password">Password:  </label>
-        <input type="password" id="password" name="password"><br>
-        <button type="submit">Sign Up</button>
+        <input type="password" id="password" name="password" oninput="UpdateButtonEnabled()"><br>
+        <button type="submit" id="signupbutton" disabled>Sign Up</button>
     </form>
 </html>

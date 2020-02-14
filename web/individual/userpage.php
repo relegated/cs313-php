@@ -6,7 +6,8 @@ $db = get_db();
 $id = htmlspecialchars($_POST["username"]);
 $pass = htmlspecialchars($_POST["password"]);
 
-$signInValidation = $db->prepare("SELECT COUNT(*) 
+try {
+    $signInValidation = $db->prepare("SELECT COUNT(*) 
 FROM user_account 
 WHERE account_email =:id AND pass_hash =:pass");
 $signInValidation->bindValue(':id', $id, PDO::PARAM_STR);
@@ -14,6 +15,12 @@ $signInValidation->bindValue(':pass', $pass, PDO::PARAM_STR);
 $signInValidation->execute();
 
 $signInValidated = $signInValidation->fetchColumn() > 0;
+
+} catch (PDOException $ex) {
+    echo "Error: ". $ex;
+    die();
+}
+
 
 if ($signInValidated) {
     //logic to display results

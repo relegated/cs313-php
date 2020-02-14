@@ -3,16 +3,9 @@
     if (is_null($invalidLogin)) {
         $invalidLogin = false;
     }    
-
-    if ($invalidLogin) {
-        echo 'Hello';
-    }
-    else {
-        echo 'You are good';
-    }
 ?>
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -25,7 +18,7 @@
 </head>
 
 <body>
-    <h1><?php #if ($invalidLogin == true) { echo 'Invalid ' }?>Login</h1>
+    <h1><?php if ($invalidLogin == true) { echo 'Invalid '; }?>Login</h1>
     <form action="userpage.php">
         <label for="username">Username: </label>
         <input type="text" id="username" name="username"><br>
@@ -39,4 +32,4 @@
     </form>
 </body>
 
-</html> -->
+</html>

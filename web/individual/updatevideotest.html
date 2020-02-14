@@ -1,6 +1,31 @@
 <html>
     <head>
         <title>Test Only</title>
+        <script>
+            function tryThis()
+            {
+                let xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        tableDataElement.innerHTML = getLinkHTML(linkText);
+                        document.getElementById("error").innerHTML = "";
+                    }
+                    else if (this.readyState == 4 && this.status == 409) {
+                        tableDataElement.innerHTML = originalText;
+                        document.getElementById("error").innerHTML = "This Video has already been added";
+                    }
+                    else if (this.readyState == 4) {
+                        tableDataElement.innerHTML = originalText;
+                        document.getElementById("error").innerHTML = "An error occurred adding or updating the video link";
+                    }
+                };
+                xmlhttp.open("POST", "updatevideo.php", true);
+                xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xmlhttp.send("userid=" + 3 +
+                            "videonumber=" + 1 +
+                            "videolink=" + "link2");
+            }
+        </script>
     </head>
     <body>
         <form action="updatevideo.php" method="POST">
@@ -9,5 +34,8 @@
             link: <input type="text" name="videolink"><br>
             <button type="submit">Test</button>
         </form>
+
+        <button type="button" onclick="tryThis()">tryThis</button>
+        
     </body>
 </html>

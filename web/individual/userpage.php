@@ -25,13 +25,17 @@ $signInValidated = $signInValidation->fetchColumn() > 0;
 if ($signInValidated) {
     //logic to display results
     try {
-        $displayNameQuery = $db->prepare("SELECT concat(first_name, ' ', last_name) 
+        $displayNameQuery = $db->prepare("SELECT concat(first_name, ' ', last_name) AS fullname
         FROM user_account 
         WHERE account_email =:id");
         $displayNameQuery->bindValue(':id', $id, PDO::PARAM_STR);
         $displayNameQuery->execute();
     
-        $displayName = $displayNameQuery->fetchAll(PDO::FETCH_ASSOC);
+        $displayNameArray = $displayNameQuery->fetchAll(PDO::FETCH_ASSOC);
+        $displayName = "";
+        foreach ($displayNameArray as $name) {
+            $displayName = $name['fullname'];
+        }
     
         
     } catch (PDOException $ex1) {

@@ -34,7 +34,7 @@ try {
     FROM video_links
     WHERE user_id =:id AND ranking =:videoNumber");
     $doesRankExistQuery->bindValue(':id', $id, PDO::PARAM_INT);
-    $doesRankExistQuery->bindValue(':videonumber', $videoLink, PDO::PARAM_INT);
+    $doesRankExistQuery->bindValue(':videonumber', $videoNumber, PDO::PARAM_INT);
     
     $doesRankExistQuery->execute();
 } catch (PDOException $ex1) {

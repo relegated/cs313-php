@@ -1,9 +1,9 @@
 <?php
     $invalidLogin = $_GET['invalid'];
-
+    echo $invalidLogin;
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -30,4 +30,4 @@
     </form>
 </body>
 
-</html>
+</html> -->

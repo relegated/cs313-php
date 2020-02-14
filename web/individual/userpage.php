@@ -106,7 +106,7 @@ if ($signInValidated) {
     <?php
 }
 else {
-    header('Location: videoslogin.html?invalid=true');
+    header('Location: videoslogin.php?invalid=true');
 }
 
 ?>

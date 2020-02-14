@@ -6,17 +6,20 @@
             {
                 let xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {
+                    document.getElementById("status").innerHTML = 
+                        "state: " + this.readyState +
+                        "status: " + this.status;
                     if (this.readyState == 4 && this.status == 200) {
-                        tableDataElement.innerHTML = getLinkHTML(linkText);
-                        document.getElementById("error").innerHTML = "";
+                        //tableDataElement.innerHTML = getLinkHTML(linkText);
+                        //document.getElementById("error").innerHTML = "";
                     }
                     else if (this.readyState == 4 && this.status == 409) {
-                        tableDataElement.innerHTML = originalText;
-                        document.getElementById("error").innerHTML = "This Video has already been added";
+                        //tableDataElement.innerHTML = originalText;
+                        //document.getElementById("error").innerHTML = "This Video has already been added";
                     }
                     else if (this.readyState == 4) {
-                        tableDataElement.innerHTML = originalText;
-                        document.getElementById("error").innerHTML = "An error occurred adding or updating the video link";
+                        //tableDataElement.innerHTML = originalText;
+                        //document.getElementById("error").innerHTML = "An error occurred adding or updating the video link";
                     }
                 };
                 xmlhttp.open("POST", "updatevideo.php", true);
@@ -36,6 +39,7 @@
         </form>
 
         <button type="button" onclick="tryThis()">tryThis</button>
+        <p id="status"></p>
         
     </body>
 </html>

@@ -34,7 +34,7 @@ try {
     FROM video_links
     WHERE user_id =:id AND ranking =:videoNumber");
     $doesRankExistQuery->bindValue(':id', $id, PDO::PARAM_INT);
-    $doesRankExistQuery->bindValue(':videonumber', $videoLink, PDO::PARAM_STR);
+    $doesRankExistQuery->bindValue(':videonumber', $videoLink, PDO::PARAM_INT);
     
     $doesRankExistQuery->execute();
 } catch (PDOException $ex1) {
@@ -50,7 +50,7 @@ if ($doesRankExistQuery->fetchColumn() > 0) {
     SET link =:videolink
     WHERE user_id =:id AND ranking =:videoNumber");
     $updateLinkStatement->bindValue(':id', $id, PDO::PARAM_INT);
-    $updateLinkStatement->bindValue(':videonumber', $videoLink, PDO::PARAM_STR);
+    $updateLinkStatement->bindValue(':videonumber', $videoLink, PDO::PARAM_INT);
     $updateLinkStatement->bindValue(':videolink', $videoLink, PDO::PARAM_STR);
 
     $updateLinkStatement->execute();
@@ -68,7 +68,7 @@ try {
     $insertLinkStatement = $db->prepare("INSERT INTO video_links (link, ranking, user_id)
     VALUES (:videolink , :videonumber , :id)");
     $insertLinkStatement->bindValue(':id', $id, PDO::PARAM_INT);
-    $insertLinkStatement->bindValue(':videonumber', $videoLink, PDO::PARAM_STR);
+    $insertLinkStatement->bindValue(':videonumber', $videoLink, PDO::PARAM_INT);
     $insertLinkStatement->bindValue(':videolink', $videoLink, PDO::PARAM_STR);
 
     $insertLinkStatement->execute();

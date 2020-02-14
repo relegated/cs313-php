@@ -59,8 +59,8 @@ if ($doesRankExistQuery->fetchColumn() > 0) {
     }
 
     
-    // http_response_code(200);
-    // die();
+    http_response_code(200);
+    die();
 }
 else {
     //insert
@@ -78,8 +78,8 @@ try {
 
    
 
-    // http_response_code(200);
-    // die();
+    http_response_code(200);
+    die();
 }
 
 ?>

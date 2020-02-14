@@ -172,6 +172,17 @@ if ($signInValidated) {
         </tr>
     <?php 
         }
+
+        for ($i = 5 - count($rows); $i <= 5 ; $i++) { 
+            ?>
+            <tr> <td>
+            <?php
+            echo $i . ':'; ?> </td>
+            <td id="<?php echo $i; ?>">No Video Yet</td>
+            <td><button type="button" onclick="generateEditorControl(document.getElementById(&quot;<?php echo $i; ?>&quot;))">Add/Edit</button></td>
+        </tr>
+        <?php
+        }
         ?>
         </table>
         <?php

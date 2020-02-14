@@ -17,32 +17,38 @@ $signInValidation->execute();
 $signInValidated = $signInValidation->fetchColumn() > 0;
 
 } catch (PDOException $ex) {
-    echo "Error: ". $ex;
-    die();
+    echo "Error ex: ". $ex;
+    
 }
 
 
 if ($signInValidated) {
     //logic to display results
-    $displayNameQuery = $db->prepare("SELECT concat(first_name, ' ', last_name) 
-    FROM user_account 
-    WHERE account_email =:id");
-    $displayNameQuery->bindValue(':id', $id, PDO::PARAM_STR);
-    $displayNameQuery->execute();
+    try {
+        $displayNameQuery = $db->prepare("SELECT concat(first_name, ' ', last_name) 
+        FROM user_account 
+        WHERE account_email =:id");
+        $displayNameQuery->bindValue(':id', $id, PDO::PARAM_STR);
+        $displayNameQuery->execute();
+    
+        $displayName = $displayNameQuery->fetchAll(PDO::FETCH_ASSOC);
+    
+        $videos = $db->prepare("SELECT vl.ranking, vl.link 
+        FROM video_links AS vl
+        LEFT JOIN user_account AS ua 
+        ON vl.user_id = ua.user_id
+        WHERE ua.user_id =:id
+        ORDER BY vl.ranking;");
+        $videos->bindValue(':id', $id, PDO::PARAM_STR);
+    
+        $videos->execute();
+    
+        $rows = $videos->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $ex1) {
+        echo "Error ex1: " . $ex1;
+    }
 
-    $displayName = $displayNameQuery->fetchAll(PDO::FETCH_ASSOC);
-
-    $videos = $db->prepare("SELECT vl.ranking, vl.link 
-    FROM video_links AS vl
-    LEFT JOIN user_account AS ua 
-    ON vl.user_id = ua.user_id
-    WHERE ua.user_id =:id
-    ORDER BY vl.ranking;");
-    $videos->bindValue(':id', $id, PDO::PARAM_STR);
-
-    $videos->execute();
-
-    $rows = $videos->fetchAll(PDO::FETCH_ASSOC);
+   
 
     ?>
 

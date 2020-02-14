@@ -33,22 +33,26 @@ if ($signInValidated) {
     
         $displayName = $displayNameQuery->fetchAll(PDO::FETCH_ASSOC);
     
-        $videos = $db->prepare("SELECT vl.ranking, vl.link 
-        FROM video_links AS vl
-        LEFT JOIN user_account AS ua 
-        ON vl.user_id = ua.user_id
-        WHERE ua.user_id =:id
-        ORDER BY vl.ranking;");
-        $videos->bindValue(':id', $id, PDO::PARAM_STR);
-    
-        $videos->execute();
-    
-        $rows = $videos->fetchAll(PDO::FETCH_ASSOC);
+        
     } catch (PDOException $ex1) {
         echo "Error ex1: " . $ex1;
     }
 
-   
+   try {
+    $videos = $db->prepare("SELECT vl.ranking, vl.link 
+    FROM video_links AS vl
+    LEFT JOIN user_account AS ua 
+    ON vl.user_id = ua.user_id
+    WHERE ua.user_id =:id
+    ORDER BY vl.ranking;");
+    $videos->bindValue(':id', $id, PDO::PARAM_STR);
+
+    $videos->execute();
+
+    $rows = $videos->fetchAll(PDO::FETCH_ASSOC);
+   } catch (PDOException $ex2) {
+       echo "Error ex2: ". $ex2;
+   }
 
     ?>
 

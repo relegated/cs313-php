@@ -163,7 +163,7 @@ if ($signInValidated) {
     if ($rows) {
         ?>
         <div class="container">
-        <table>
+        <table class="table">
             <tr>
                 <th>Rank</th>
                 <th>Link</th>
@@ -201,7 +201,7 @@ if ($signInValidated) {
     } else {
         ?>
         <div class="container">
-        <table>
+        <table class="table">
             <tr>
                 <th>Rank</th>
                 <th>Link</th>

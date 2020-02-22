@@ -16,6 +16,8 @@ $readHash = $signInValidation->fetch(PDO::FETCH_ASSOC);
 
 $signInValidated = password_verify($initialPass, $readHash);
 
+echo $initialPass . " -> " . $readHash;
+
 } catch (PDOException $ex) {
     echo "Error ex: ". $ex;
     

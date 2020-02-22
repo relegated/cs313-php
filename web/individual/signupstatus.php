@@ -54,7 +54,6 @@ if ($userNameAvailable) {
         header('Location: videoslogin.php');
 } catch (PDOException $ex1) {
     echo "Error ex1: ". $ex1;
-    echo $pass . " -> " . $hashedPass;
 }
 
 }

@@ -26,6 +26,7 @@
 </head>
 
 <body>
+    <div class="container">
     <h1><?php if ($invalidLogin == true) { echo 'Invalid '; }?>Login</h1>
     <form action="userpage.php" method="POST">
         <label for="username">Username: </label>
@@ -38,6 +39,7 @@
     <form action="signup.html">
         <button type="submit">Create Account</button>
     </form>
+    </div>
 </body>
 
 </html>

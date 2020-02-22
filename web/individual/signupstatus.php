@@ -43,6 +43,7 @@ $userNameAvailable = $userNameAvailability->fetchColumn() == 0;
         }
     </style> -->
 </head>
+<div class="container">
 <body>
 
 <?php
@@ -77,4 +78,5 @@ else {
 
 ?>
 </body>
+</div>
 </html>

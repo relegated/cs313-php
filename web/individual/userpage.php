@@ -155,6 +155,7 @@ if ($signInValidated) {
             }
         </script>
     </head>
+    <div class="container">
     <body>
     <h1><?php echo 'Top 5 Videos For ' . $displayName; ?></h1>
     
@@ -235,6 +236,7 @@ if ($signInValidated) {
 
     <div id="error"></div>
 
+</div>
     </body>
     </html>
 

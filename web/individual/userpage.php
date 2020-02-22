@@ -183,7 +183,7 @@ if ($signInValidated) {
     <?php 
         }
 
-        for ($i = 5 - count($rows); $i <= 5 ; $i++) { 
+        for ($i = 5 + count($rows); $i <= 5 ; $i++) { 
             ?>
             <tr> <td>
             <?php

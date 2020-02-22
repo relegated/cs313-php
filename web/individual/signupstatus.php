@@ -5,7 +5,7 @@ $db = get_db();
 
 $id = htmlspecialchars($_POST["username"]);
 $pass = htmlspecialchars($_POST["password"]);
-$hashedPass = password_hash($pass);
+$hashedPass = password_hash($pass, PASSWORD_DEFAULT);
 $firstname = htmlspecialchars($_POST["firstname"]);
 $lastname = htmlspecialchars($_POST["lastname"]);
 

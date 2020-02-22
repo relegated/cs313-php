@@ -4,17 +4,17 @@ require("connectDB.php");
 $db = get_db();
 
 $id = htmlspecialchars($_POST["username"]);
-$pass = htmlspecialchars($_POST["password"]);
+$initialPass = htmlspecialchars($_POST["password"]);
 
 try {
-    $signInValidation = $db->prepare("SELECT COUNT(*) 
+    $signInValidation = $db->prepare("SELECT pass_hash 
 FROM user_account 
-WHERE account_email =:id AND pass_hash =:pass");
+WHERE account_email =:id");
 $signInValidation->bindValue(':id', $id, PDO::PARAM_STR);
-$signInValidation->bindValue(':pass', $pass, PDO::PARAM_STR);
 $signInValidation->execute();
+$readHash = $signInValidation->fetch(PDO::FETCH_ASSOC);
 
-$signInValidated = $signInValidation->fetchColumn() > 0;
+$signInValidated = password_verify($initialPass, $readHash);
 
 } catch (PDOException $ex) {
     echo "Error ex: ". $ex;

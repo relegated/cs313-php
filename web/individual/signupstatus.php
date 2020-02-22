@@ -5,6 +5,7 @@ $db = get_db();
 
 $id = htmlspecialchars($_POST["username"]);
 $pass = htmlspecialchars($_POST["password"]);
+$hashedPass = password_hash($pass);
 $firstname = htmlspecialchars($_POST["firstname"]);
 $lastname = htmlspecialchars($_POST["lastname"]);
 
@@ -47,7 +48,7 @@ if ($userNameAvailable) {
         $addUserStatment->bindValue(':firstname', $firstname, PDO::PARAM_STR);
         $addUserStatment->bindValue(':lastname', $lastname, PDO::PARAM_STR);
         $addUserStatment->bindValue(':username', $id, PDO::PARAM_STR);
-        $addUserStatment->bindValue(':pass', $pass, PDO::PARAM_STR);
+        $addUserStatment->bindValue(':pass', $hashedPass, PDO::PARAM_STR);
         $addUserStatment->execute();
 
         header('Location: videoslogin.php');

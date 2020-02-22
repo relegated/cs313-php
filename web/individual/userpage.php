@@ -14,7 +14,7 @@ $signInValidation->bindValue(':id', $id, PDO::PARAM_STR);
 $signInValidation->execute();
 $readHash = $signInValidation->fetch(PDO::FETCH_ASSOC);
 
-$signInValidated = password_verify($initialPass, $readHash);
+$signInValidated = password_verify($initialPass, $readHash['pass_hash']);
 
 echo $initialPass . " -> " . $readHash;
 die();

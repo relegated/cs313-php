@@ -35,14 +35,24 @@
         
     <h1>Signup</h1>
     <form action="signupstatus.php" method="POST">
-        <label for="firstname">First Name: </label>
-        <input type="text" id="firstname" name="firstname" oninput="UpdateButtonEnabled()"><br>
-        <label for="lastname">Last Name: </label>
-        <input type="text" id="lastname" name="lastname" oninput="UpdateButtonEnabled()"><br>
-        <label for="username">Username: </label>
-        <input type="text" id="username" name="username" oninput="UpdateButtonEnabled()"><br>
-        <label for="password">Password:  </label>
-        <input type="password" id="password" name="password" oninput="UpdateButtonEnabled()"><br>
+        <table class="table">
+            <tr>
+                <td><label for="firstname">First Name: </label></td>
+                <td><input type="text" id="firstname" name="firstname" oninput="UpdateButtonEnabled()"></td>
+            </tr>
+        <tr>
+            <td><label for="lastname">Last Name: </label></td>
+            <td><input type="text" id="lastname" name="lastname" oninput="UpdateButtonEnabled()"></td>
+        </tr>
+        <tr>
+            <td><label for="username">Username: </label></td>
+            <td><input type="text" id="username" name="username" oninput="UpdateButtonEnabled()"></td>
+        </tr>
+        <tr>
+            <td><label for="password">Password:  </label></td>
+            <td><input type="password" id="password" name="password" oninput="UpdateButtonEnabled()"></td>
+        </tr>        
+        </table>
         <button type="submit" id="signupbutton" disabled>Sign Up</button>
     </form>
     </body>

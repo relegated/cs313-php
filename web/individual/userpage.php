@@ -157,7 +157,7 @@ if ($signInValidated) {
     </head>
     
     <body>
-    <h1><?php echo 'Top 5 Videos For ' . $displayName; ?></h1>
+    <div class="container"><h1><?php echo 'Top 5 Videos For ' . $displayName; ?></h1></div>
     
     <?php 
     if ($rows) {

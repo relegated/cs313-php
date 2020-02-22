@@ -155,13 +155,14 @@ if ($signInValidated) {
             }
         </script>
     </head>
-    <div class="container">
+    
     <body>
     <h1><?php echo 'Top 5 Videos For ' . $displayName; ?></h1>
     
     <?php 
     if ($rows) {
         ?>
+        <div class="container">
         <table>
             <tr>
                 <th>Rank</th>
@@ -194,10 +195,12 @@ if ($signInValidated) {
         }
         ?>
         </table>
+    </div>
         <?php
 
     } else {
         ?>
+        <div class="container">
         <table>
             <tr>
                 <th>Rank</th>
@@ -230,13 +233,14 @@ if ($signInValidated) {
                 <td><button type="button" onclick="generateEditorControl(document.getElementById(&quot;5&quot;))">Add/Edit</button></td>
             </tr>
         </table>
+    </div>
         <?php 
     }
     ?>
 
     <div id="error"></div>
 
-</div>
+
     </body>
     </html>
 

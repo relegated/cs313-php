@@ -29,11 +29,19 @@ $userNameAvailable = $userNameAvailability->fetchColumn() == 0;
 
 <head>
     <title>5 Videos Login</title>
-    <style>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- <style>
         h1, h2, h3, label, button, input, form {
             padding: 10px 10px 10px 10px;
         }
-    </style>
+    </style> -->
 </head>
 <body>
 
